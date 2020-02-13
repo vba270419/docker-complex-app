@@ -14,7 +14,7 @@ after_success:
   - docker build -t aeroslon/multi-worker -f ./worker
   - docker build -t aeroslon/multi-ngnix -f ./ngnix
   # login to docker cli
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker login -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
   # push images to docker hub
   - docker push aeroslon/multi-client
   - docker push aeroslon/multi-server
