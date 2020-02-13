@@ -9,10 +9,10 @@ script:
   - docker run -e CI=true aeroslon/react-test npm run test
 
 after_success:
-  - docker build -t aeroslon/multi-client -f ./client
-  - docker build -t aeroslon/multi-server -f ./server
-  - docker build -t aeroslon/multi-worker -f ./worker
-  - docker build -t aeroslon/multi-ngnix -f ./ngnix
+  - docker build -t aeroslon/multi-client ./client
+  - docker build -t aeroslon/multi-server ./server
+  - docker build -t aeroslon/multi-worker ./worker
+  - docker build -t aeroslon/multi-ngnix ./ngnix
   # login to docker cli
   - docker login -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
   # push images to docker hub
