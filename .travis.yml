@@ -12,11 +12,11 @@ after_success:
   - docker build -t aeroslon/multi-client ./client
   - docker build -t aeroslon/multi-server ./server
   - docker build -t aeroslon/multi-worker ./worker
-  - docker build -t aeroslon/multi-ngnix ./ngnix
+  - docker build -t aeroslon/multi-nginx ./nginx
   # login to docker cli
   - docker login -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
   # push images to docker hub
   - docker push aeroslon/multi-client
   - docker push aeroslon/multi-server
   - docker push aeroslon/multi-worker
-  - docker push aeroslon/multi-ngnix
+  - docker push aeroslon/multi-nginx
